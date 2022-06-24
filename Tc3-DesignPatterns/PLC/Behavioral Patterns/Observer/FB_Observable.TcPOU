@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="FB_Observable" Id="{e2a73847-3ae9-41c4-a05d-e034052bdb33}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Observable IMPLEMENTS I_Observable
+VAR
+	_verbose						: BOOL := TRUE;
+	// Make sure the list of references to subscribers is updated after online change 
+	observers						: ARRAY[0..param.MaxObservers-1] OF I_Observer;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="attach" Id="{8777bfbf-0b24-4d4c-bfbb-b615baf81400}">
+      <Declaration><![CDATA[METHOD attach : BOOL
+VAR_INPUT
+	observer			: I_Observer;
+END_VAR
+VAR
+	i					: INT;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[(* default *)
+attach := FALSE;
+
+(* loop if the subscriber is already registered *)
+FOR i := 0 TO param.MaxObservers-1 DO
+	IF observers[i] = observer 	THEN
+		observer.update();
+		attach := TRUE;
+		RETURN;
+	END_IF
+END_FOR
+
+(* loop for first free position if not yet attached *)
+FOR i := 0 TO param.MaxObservers-1 DO
+	IF observers[i] = 0 	THEN
+		observers[i] := observer;
+		message('Observer registered');
+		observer.update();
+		attach := TRUE;
+		EXIT;
+	END_IF
+END_FOR
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="detach" Id="{e9b4dda7-c343-4f9f-a3ca-f5b9e6583823}">
+      <Declaration><![CDATA[METHOD detach : BOOL
+VAR_INPUT
+	observer			: I_Observer;
+END_VAR
+VAR
+	i					: INT;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[(* default *)
+detach := FALSE;
+
+(* loop if the subscriber is already registered *)
+FOR i := 0 TO param.MaxObservers-1 DO
+	IF observers[i] = observer 	THEN
+		observers[i] := 0;
+		message('Observer registered');
+		detach := TRUE;
+		RETURN;
+	END_IF
+END_FOR
+
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="message" Id="{bdd75991-46b2-4d02-b68d-98ecf52da978}">
+      <Declaration><![CDATA[METHOD INTERNAL message : BOOL
+VAR_INPUT
+	strArg						: STRING;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[// Log message
+IF _verbose  THEN
+	ADSLOGSTR(
+		msgCtrlMask := ADSLOG_MSGTYPE_HINT OR ADSLOG_MSGTYPE_LOG, // ADSLOG_MSGTYPE_ERROR OR ADSLOG_MSGTYPE_LOG, 
+		msgFmtStr 	:= '%s',
+		strArg 		:= strArg
+		);
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="notify" Id="{066cc371-6893-4a9d-a670-ce206a879997}">
+      <Declaration><![CDATA[METHOD notify : BOOL
+VAR
+	i			: INT;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[(* default *)
+notify := FALSE;
+
+(* loop if the subscriber is already registered *)
+FOR i := 0 TO param.MaxObservers-1 DO
+	IF observers[i] <> 0 	THEN
+		observers[i].update();
+	END_IF
+END_FOR
+
+]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_Observable">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Observable.attach">
+      <LineId Id="51" Count="21" />
+      <LineId Id="18" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Observable.detach">
+      <LineId Id="45" Count="12" />
+      <LineId Id="7" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Observable.message">
+      <LineId Id="6" Count="6" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Observable.notify">
+      <LineId Id="16" Count="2" />
+      <LineId Id="5" Count="2" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="9" Count="2" />
+      <LineId Id="4" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="FB_Publisher" Id="{270e0f21-f10c-4d6e-aaab-748f1b75e82c}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Publisher IMPLEMENTS I_EventPublisher
+VAR
+	raiseEvent						: BOOL;
+	_event							: INT;
+	_eventPrev						: INT;
+	
+	publisher						: FB_Observable;	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF _eventPrev <> _event 			THEN
+	publisher.notify();
+	_eventPrev := _event;
+END_IF]]></ST>
+    </Implementation>
+    <Method Name="attach" Id="{ab4ff1ed-f2e9-459d-bd43-c6901c9fa429}">
+      <Declaration><![CDATA[METHOD attach : BOOL
+VAR_INPUT
+	observer			: I_Observer;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[attach := publisher.attach(observer);
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="detach" Id="{0aef42ef-b37c-48ca-9ad5-1143c99045a0}">
+      <Declaration><![CDATA[METHOD detach : BOOL
+VAR_INPUT
+	observer	: I_Observer;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[detach := publisher.detach(observer);
+]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="event" Id="{5a53bf6d-f733-4ff7-bc62-c7e9a7ce7ec4}">
+      <Declaration><![CDATA[PROPERTY event : int]]></Declaration>
+      <Get Name="Get" Id="{cdadf8c7-7fab-4fb4-84ee-b1e660efac40}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[event := _event;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <LineIds Name="FB_Publisher">
+      <LineId Id="9" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="15" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Publisher.attach">
+      <LineId Id="8" Count="0" />
+      <LineId Id="13" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Publisher.detach">
+      <LineId Id="8" Count="0" />
+      <LineId Id="7" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_Publisher.event.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

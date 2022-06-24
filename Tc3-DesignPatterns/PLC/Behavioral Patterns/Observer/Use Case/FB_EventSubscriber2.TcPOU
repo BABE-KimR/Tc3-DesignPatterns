@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="FB_EventSubscriber2" Id="{78948430-835f-4189-b81a-4f54b3428e0d}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_EventSubscriber2 IMPLEMENTS I_Observer
+VAR_INPUT
+	eventPublisher					: I_EventPublisher;
+END_VAR
+VAR
+	_verbose						: BOOL := TRUE;
+	_event							: INT;
+	// Register after online change 
+	registeredAtPublisher			: BOOL;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// Is there a valid publisher attached? 
+IF eventPublisher=0	THEN
+	RETURN;
+END_IF
+
+// Did we already register in the publisher?
+IF NOT registeredAtPublisher	THEN
+	registeredAtPublisher := eventPublisher.attach(THIS^);
+END_IF 
+]]></ST>
+    </Implementation>
+    <Method Name="message" Id="{89c2fe32-3b54-4706-b6a2-e8e1e9486d7b}">
+      <Declaration><![CDATA[METHOD INTERNAL message : BOOL
+VAR_INPUT
+	dintArg						: DINT;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[// Log message
+IF _verbose  THEN
+	ADSLOGDINT(
+		msgCtrlMask := ADSLOG_MSGTYPE_HINT OR ADSLOG_MSGTYPE_LOG, // ADSLOG_MSGTYPE_ERROR OR ADSLOG_MSGTYPE_LOG, 
+		msgFmtStr 	:= 'Subscriber 2 knows the value changed to %d',
+		dintArg 	:= dintArg
+		);
+END_IF
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="update" Id="{abb6583e-4f5d-489c-9536-8dff87c43972}">
+      <Declaration><![CDATA[METHOD update : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[// the publisher mentions an update, fetch the data
+_event := eventPublisher.event;
+message(TO_DINT(_event));
+]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_EventSubscriber2">
+      <LineId Id="17" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="15" Count="1" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="20" Count="3" />
+    </LineIds>
+    <LineIds Name="FB_EventSubscriber2.message">
+      <LineId Id="15" Count="6" />
+      <LineId Id="6" Count="0" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_EventSubscriber2.update">
+      <LineId Id="4" Count="1" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="16" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
