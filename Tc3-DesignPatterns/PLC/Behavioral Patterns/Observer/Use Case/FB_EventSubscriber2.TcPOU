@@ -10,6 +10,8 @@ VAR
 	_event							: INT;
 	// Register after online change 
 	registeredAtPublisher			: BOOL;
+
+	breinit 						: BOOL; // reinit test marker
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[// Is there a valid publisher attached? 
@@ -23,8 +25,25 @@ IF NOT registeredAtPublisher	THEN
 END_IF 
 ]]></ST>
     </Implementation>
+    <Method Name="fbreinit" Id="{4f4019a2-6dab-4552-accd-abde4ac41c58}">
+      <Declaration><![CDATA[{attribute 'call_after_online_change_slot' := '0'}
+METHOD PRIVATE fbreinit
+
+(*	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+   	THIS METHOD is force called after every online change 
+   	!= the fb_reinit system call that will be called after the instance of the concerned function block has been copied 
+ 	(during an online change after modifications in the function block declaration)
+
+	This is necessary since both observer en observee 
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!	*) 
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[registeredAtPublisher := FALSE;
+breinit:=not breinit; // flip the test marker]]></ST>
+      </Implementation>
+    </Method>
     <Method Name="message" Id="{89c2fe32-3b54-4706-b6a2-e8e1e9486d7b}">
-      <Declaration><![CDATA[METHOD INTERNAL message : BOOL
+      <Declaration><![CDATA[METHOD PRIVATE message : BOOL
 VAR_INPUT
 	dintArg						: DINT;
 END_VAR]]></Declaration>
@@ -50,23 +69,5 @@ message(TO_DINT(_event));
 ]]></ST>
       </Implementation>
     </Method>
-    <LineIds Name="FB_EventSubscriber2">
-      <LineId Id="17" Count="0" />
-      <LineId Id="9" Count="0" />
-      <LineId Id="15" Count="1" />
-      <LineId Id="19" Count="0" />
-      <LineId Id="18" Count="0" />
-      <LineId Id="20" Count="3" />
-    </LineIds>
-    <LineIds Name="FB_EventSubscriber2.message">
-      <LineId Id="15" Count="6" />
-      <LineId Id="6" Count="0" />
-      <LineId Id="5" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_EventSubscriber2.update">
-      <LineId Id="4" Count="1" />
-      <LineId Id="24" Count="0" />
-      <LineId Id="16" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

@@ -3,11 +3,8 @@
   <POU Name="P_Observer_Pattern" Id="{5faa3a49-42e7-4978-b72e-a8bc09894fca}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM P_Observer_Pattern
 VAR
-{attribute 'init_on_onlchange' }
 	eventPublisher					: FB_Publisher;
-{attribute 'init_on_onlchange' }
 	eventSubscriber1				: FB_EventSubscriber1;	
-{attribute 'init_on_onlchange' }
 	eventSubscriber2				: FB_EventSubscriber2;	
 END_VAR
 ]]></Declaration>
@@ -17,9 +14,5 @@ eventSubscriber1(eventPublisher:=eventPublisher);
 eventSubscriber2(eventPublisher:=eventPublisher);
 ]]></ST>
     </Implementation>
-    <LineIds Name="P_Observer_Pattern">
-      <LineId Id="14" Count="2" />
-      <LineId Id="5" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

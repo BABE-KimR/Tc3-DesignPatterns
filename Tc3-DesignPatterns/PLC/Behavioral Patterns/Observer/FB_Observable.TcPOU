@@ -6,6 +6,8 @@ VAR
 	_verbose						: BOOL := TRUE;
 	// Make sure the list of references to subscribers is updated after online change 
 	observers						: ARRAY[0..param.MaxObservers-1] OF I_Observer;
+
+	breinit 						: BOOL; // reinit test marker
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -61,7 +63,7 @@ detach := FALSE;
 FOR i := 0 TO param.MaxObservers-1 DO
 	IF observers[i] = observer 	THEN
 		observers[i] := 0;
-		message('Observer registered');
+		message('Observer deregistered');
 		detach := TRUE;
 		RETURN;
 	END_IF
@@ -70,8 +72,29 @@ END_FOR
 ]]></ST>
       </Implementation>
     </Method>
+    <Method Name="fbreinit" Id="{5eb48304-7ea0-4c0a-aa2b-8367a1a8f441}">
+      <Declaration><![CDATA[{attribute 'call_after_online_change_slot' := '0'}
+METHOD PRIVATE fbreinit
+(*	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+   	THIS METHOD is force called after every online change 
+   	!= the fb_reinit system call that will be called after the instance of the concerned function block has been copied 
+ 	(during an online change after modifications in the function block declaration)
+
+	This is necessary since both observer en observee 
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!	*) 
+VAR
+	i					: INT;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[(* loop if the subscriber is already registered *)
+FOR i := 0 TO param.MaxObservers-1 DO
+	observers[i] := 0;
+END_FOR
+breinit:=NOT breinit; // flip the test marker]]></ST>
+      </Implementation>
+    </Method>
     <Method Name="message" Id="{bdd75991-46b2-4d02-b68d-98ecf52da978}">
-      <Declaration><![CDATA[METHOD INTERNAL message : BOOL
+      <Declaration><![CDATA[METHOD PRIVATE message : BOOL
 VAR_INPUT
 	strArg						: STRING;
 END_VAR]]></Declaration>
@@ -105,27 +128,5 @@ END_FOR
 ]]></ST>
       </Implementation>
     </Method>
-    <LineIds Name="FB_Observable">
-      <LineId Id="9" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Observable.attach">
-      <LineId Id="51" Count="21" />
-      <LineId Id="18" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Observable.detach">
-      <LineId Id="45" Count="12" />
-      <LineId Id="7" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Observable.message">
-      <LineId Id="6" Count="6" />
-      <LineId Id="5" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Observable.notify">
-      <LineId Id="16" Count="2" />
-      <LineId Id="5" Count="2" />
-      <LineId Id="19" Count="0" />
-      <LineId Id="9" Count="2" />
-      <LineId Id="4" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>
