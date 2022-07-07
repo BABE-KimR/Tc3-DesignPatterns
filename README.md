@@ -1,5 +1,5 @@
 # Tc3-DesignPatterns
-Implementations of the GOF Design Patterns (https://en.wikipedia.org/wiki/Design_Patterns)
+##Implementations of the GOF Design Patterns (https://en.wikipedia.org/wiki/Design_Patterns)
  * Creational patterns
    * None yet
  * Structural patterns
