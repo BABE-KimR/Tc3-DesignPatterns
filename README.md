@@ -7,17 +7,20 @@ Implementations of the GOF Design Patterns (https://en.wikipedia.org/wiki/Design
  * Behavioral patterns
    * Observer
    
+
 Additional patterns (https://en.wikipedia.org/wiki/Software_design_pattern)
  * Concurrency patterns 
    * None yet
+
 
 Contains for every pattern:
  * the pattern
  * use case code
  * TcUnit unit tests
  
- Dependencies:
- * TcUnit unit testing framework
+
+Dependencies:
+ * TcUnit unit testing framework (https://tcunit.org/)
  
  
  
