@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
-  <POU Name="FB_Publisher" Id="{270e0f21-f10c-4d6e-aaab-748f1b75e82c}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION_BLOCK FB_Publisher IMPLEMENTS I_EventPublisher
+  <POU Name="FB_EventPublisher" Id="{270e0f21-f10c-4d6e-aaab-748f1b75e82c}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_EventPublisher IMPLEMENTS I_EventPublisher
 VAR
 	raiseEvent						: BOOL;
 	_event							: INT;
@@ -27,6 +27,18 @@ END_VAR
 ]]></ST>
       </Implementation>
     </Method>
+    <Property Name="changeEvent" Id="{05b37224-02c8-4354-b619-b3cf8f6eb51f}">
+      <Declaration><![CDATA[PROPERTY PUBLIC changeEvent : int]]></Declaration>
+      <Set Name="Set" Id="{eda01090-ae55-40a9-bf93-25e50f34c0d7}">
+        <Declaration><![CDATA[// IMPLEMENTED ONLY FOR TESTING PURPOSES
+VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[_event := changeEvent;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
     <Method Name="detach" Id="{0aef42ef-b37c-48ca-9ad5-1143c99045a0}">
       <Declaration><![CDATA[METHOD detach : BOOL
 VAR_INPUT
@@ -39,7 +51,8 @@ END_VAR
       </Implementation>
     </Method>
     <Property Name="event" Id="{5a53bf6d-f733-4ff7-bc62-c7e9a7ce7ec4}">
-      <Declaration><![CDATA[PROPERTY event : int]]></Declaration>
+      <Declaration><![CDATA[// IMPLEMENTED ONLY FOR TESTING PURPOSES
+PROPERTY event : int]]></Declaration>
       <Get Name="Get" Id="{cdadf8c7-7fab-4fb4-84ee-b1e660efac40}">
         <Declaration><![CDATA[VAR
 END_VAR
@@ -49,22 +62,15 @@ END_VAR
         </Implementation>
       </Get>
     </Property>
-    <LineIds Name="FB_Publisher">
-      <LineId Id="9" Count="0" />
-      <LineId Id="14" Count="0" />
-      <LineId Id="18" Count="0" />
-      <LineId Id="15" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Publisher.attach">
-      <LineId Id="8" Count="0" />
-      <LineId Id="13" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Publisher.detach">
-      <LineId Id="8" Count="0" />
-      <LineId Id="7" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_Publisher.event.Get">
-      <LineId Id="2" Count="0" />
-    </LineIds>
+    <Property Name="NoOfAttachedObservers" Id="{e1a94e9e-c654-4b44-b5b2-c1d8baedd47d}">
+      <Declaration><![CDATA[PROPERTY NoOfAttachedObservers : int]]></Declaration>
+      <Get Name="Get" Id="{f57f8ef9-a1c0-4e55-8245-2af669fb7a07}">
+        <Declaration><![CDATA[]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[NoOfAttachedObservers := publisher.NoOfAttachedObservers;
+]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
   </POU>
 </TcPlcObject>

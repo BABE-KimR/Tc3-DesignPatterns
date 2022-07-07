@@ -1,15 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
-  <POU Name="MAIN" Id="{0e642115-0087-4ab8-884c-2001d8a42063}" SpecialFunc="None">
+  <POU Name="MAIN" Id="{1f49e690-c5d9-46c6-b5ff-b3a4259d6f70}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
+VAR
+END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[P_Observer_Pattern();
+      <ST><![CDATA[// TcUnit tests
+P_TEST();
+
+// Use cases implementations
+P_USE_CASES();
 ]]></ST>
     </Implementation>
-    <LineIds Name="MAIN">
-      <LineId Id="5" Count="0" />
-      <LineId Id="28" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

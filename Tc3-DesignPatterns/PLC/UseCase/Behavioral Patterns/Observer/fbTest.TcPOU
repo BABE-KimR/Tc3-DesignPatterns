@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="fbTest" Id="{507e757d-b58f-4376-a86c-3c62448a9975}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK fbTest IMPLEMENTS I_Observable
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

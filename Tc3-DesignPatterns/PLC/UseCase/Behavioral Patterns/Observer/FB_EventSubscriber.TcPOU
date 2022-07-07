@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
-  <POU Name="FB_EventSubscriber1" Id="{d4dce0f2-3ded-43b2-8491-9014ab19c774}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION_BLOCK FB_EventSubscriber1 IMPLEMENTS I_Observer
+  <POU Name="FB_EventSubscriber" Id="{d4dce0f2-3ded-43b2-8491-9014ab19c774}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_EventSubscriber IMPLEMENTS I_Observer
 VAR_INPUT
 	eventPublisher					: I_EventPublisher;
 END_VAR
@@ -25,6 +25,18 @@ IF NOT registeredAtPublisher	THEN
 END_IF 
 ]]></ST>
     </Implementation>
+    <Property Name="event" Id="{aa9553a2-33bf-40d8-a234-28f7162b10c5}">
+      <Declaration><![CDATA[// IMPLEMENTED ONLY FOR TESTING PURPOSES
+PROPERTY event : int]]></Declaration>
+      <Get Name="Get" Id="{231fdd1c-03f2-4591-b73d-451501ccc307}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[event := _event;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
     <Method Name="fbreinit" Id="{981288f7-d0dd-4f4e-9719-c7816223b9f0}">
       <Declaration><![CDATA[{attribute 'call_after_online_change_slot' := '0'}
 METHOD PRIVATE fbreinit
@@ -34,7 +46,7 @@ METHOD PRIVATE fbreinit
    	!= the fb_reinit system call that will be called after the instance of the concerned function block has been copied 
  	(during an online change after modifications in the function block declaration)
 
-	This is necessary since both observer en observee 
+	This is necessary since both observer en observee have references to one other
 	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!	*) 
 ]]></Declaration>
       <Implementation>
