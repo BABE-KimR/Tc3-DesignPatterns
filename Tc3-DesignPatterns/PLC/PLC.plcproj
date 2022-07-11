@@ -19,7 +19,7 @@
     <Compile Include="Behavioral Patterns\Observer\Class Diagram Observer.TcCD">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Behavioral Patterns\Observer\FB_Observable.TcPOU">
+    <Compile Include="Behavioral Patterns\Observer\Observable.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Behavioral Patterns\Observer\I_Observable.TcIO">
@@ -38,16 +38,16 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\Behavioral Patterns\Observer\FB_Observer_Pattern_Test.TcPOU">
+    <Compile Include="Test\Behavioral Patterns\Observer\ObserverPatternTest.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Test\P_TEST.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="UseCase\Behavioral Patterns\Observer\fbTest.TcPOU">
+    <Compile Include="UseCase\Behavioral Patterns\Observer\EventPublisherWithInheritance.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="UseCase\Behavioral Patterns\Observer\FB_EventPublisher.TcPOU">
+    <Compile Include="UseCase\Behavioral Patterns\Observer\EventPublisherWithoutInheritance.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="UseCase\Behavioral Patterns\Observer\FB_EventSubscriber.TcPOU">
@@ -113,6 +113,18 @@
     <Content Include="UseCase\Behavioral Patterns\Observer\_Readme_Observer.txt">
       <SubType>Content</SubType>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <SubObject Include="EventPublisherWithoutInheritance.ChangeEvent" />
+    <SubObject Include="FB_EventSubscriber.fbreinit">
+      <ExcludeFromBuild>true</ExcludeFromBuild>
+    </SubObject>
+    <SubObject Include="FB_EventSubscriber2.fbreinit">
+      <ExcludeFromBuild>true</ExcludeFromBuild>
+    </SubObject>
+    <SubObject Include="Observable.fbreinit">
+      <ExcludeFromBuild>true</ExcludeFromBuild>
+    </SubObject>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>

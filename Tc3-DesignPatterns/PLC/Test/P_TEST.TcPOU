@@ -3,7 +3,7 @@
   <POU Name="P_TEST" Id="{0e642115-0087-4ab8-884c-2001d8a42063}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM P_TEST
 VAR
-	fbObserver_Pattern_Test					: FB_Observer_Pattern_Test;
+	fbObserver_Pattern_Test					: ObserverPatternTest;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[tcUnit.RUN();

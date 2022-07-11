@@ -3,9 +3,11 @@
   <POU Name="P_Observer_Pattern" Id="{6a33dd3e-4d54-4c64-8e83-77f86981fd08}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM P_Observer_Pattern
 VAR
-	eventPublisher					: FB_EventPublisher;
-	eventSubscriber					: FB_EventSubscriber;	
-	eventSubscriber2				: FB_EventSubscriber2;	
+	eventPublisher					: EventPublisherWithInheritance;
+	eventPublisher2					: EventPublisherWithoutInheritance;	
+	
+	eventSubscriber					: FB_EventSubscriber(eventPublisher);	
+	eventSubscriber2				: FB_EventSubscriber2(eventPublisher2);	
 	
 	bTriggerEvent					: BOOL;
 END_VAR
@@ -15,11 +17,14 @@ END_VAR
 // Change according the use case of the observer
 IF bTriggerEvent	THEN
 	eventPublisher.changeEvent := eventPublisher.event + 1;
+	eventPublisher2.changeEvent := eventPublisher2.event + 1;
 	bTriggerEvent := FALSE;
 END_IF
-eventPublisher();
-eventSubscriber(eventPublisher:=eventPublisher);
-eventSubscriber2(eventPublisher:=eventPublisher);
+eventPublisher.CyclicCall();
+eventPublisher2.CyclicCall();
+
+eventSubscriber.CyclicCall();
+eventSubscriber2.CyclicCall();
 ]]></ST>
     </Implementation>
   </POU>
