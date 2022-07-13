@@ -7,7 +7,8 @@ https://en.wikipedia.org/wiki/Design_Patterns
    * None yet
  * Behavioral patterns
    * Observer
-   
+   * Command
+     
 
 ## Additional patterns 
 https://en.wikipedia.org/wiki/Software_design_pattern
