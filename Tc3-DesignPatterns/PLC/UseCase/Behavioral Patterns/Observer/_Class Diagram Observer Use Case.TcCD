@@ -111,6 +111,179 @@
               <v n="ARGBElementColor">0</v>
               <v n="ZOrder">29U</v>
             </o>
+            <v>e2a73847-3ae9-41c4-a05d-e034052bdb33</v>
+            <o>
+              <v n="DocumenationName">"Observable"</v>
+              <n n="AttributeTrigger" />
+              <v n="ExcludedFromBuild">false</v>
+              <v n="PropertiesLoaded">false</v>
+              <d n="Properties" t="Hashtable" />
+              <l n="AttributesArray" t="ArrayList" cet="UMLElementAttribute">
+                <o>
+                  <v n="bIsAttribute">true</v>
+                  <v n="isInputVar">false</v>
+                  <v n="isOutputVar">false</v>
+                  <v n="isInoutVar">false</v>
+                  <v n="isLocalVar">true</v>
+                  <v n="bIsMethod">false</v>
+                  <v n="AttribtueName">"verbose"</v>
+                  <v n="AttributeConstraint">""</v>
+                  <v n="AttributeReturnType">"BOOL"</v>
+                  <v n="AttributeParent">{e2a73847-3ae9-41c4-a05d-e034052bdb33}</v>
+                  <v n="AttributeObjectGuid">{a4f10404-ede0-4f8a-beed-ca923c46f86c}</v>
+                  <v n="AttributeStereotype">""</v>
+                </o>
+                <o>
+                  <v n="bIsAttribute">true</v>
+                  <v n="isInputVar">false</v>
+                  <v n="isOutputVar">false</v>
+                  <v n="isInoutVar">false</v>
+                  <v n="isLocalVar">true</v>
+                  <v n="bIsMethod">false</v>
+                  <v n="AttribtueName">"observers"</v>
+                  <v n="AttributeConstraint">""</v>
+                  <v n="AttributeReturnType">"ARRAY [1..param.MaxObservers] OF I_Observer"</v>
+                  <v n="AttributeParent">{e2a73847-3ae9-41c4-a05d-e034052bdb33}</v>
+                  <v n="AttributeObjectGuid">{4bdf83d1-db51-4614-9f66-df244259f08b}</v>
+                  <v n="AttributeStereotype">""</v>
+                </o>
+                <o>
+                  <v n="bIsAttribute">false</v>
+                  <v n="isInputVar">false</v>
+                  <v n="isOutputVar">false</v>
+                  <v n="isInoutVar">false</v>
+                  <v n="isLocalVar">false</v>
+                  <v n="bIsMethod">true</v>
+                  <v n="AttribtueName">"NoOfAttachedObservers"</v>
+                  <v n="AttributeConstraint">""</v>
+                  <v n="AttributeReturnType">"INT"</v>
+                  <v n="AttributeParent">{e2a73847-3ae9-41c4-a05d-e034052bdb33}</v>
+                  <v n="AttributeObjectGuid">{5bbf002f-f9f1-4de2-9982-3bdcbd5a4adc}</v>
+                  <v n="AttributeStereotype">"Property"</v>
+                </o>
+              </l>
+              <v n="PropertyID">-1</v>
+              <v n="MethodsLoaded">false</v>
+              <d n="MethodList" t="Hashtable" ckt="Guid" cvt="UMLElementMethod">
+                <v>8777bfbf-0b24-4d4c-bfbb-b615baf81400</v>
+                <o>
+                  <v n="MethodName">"Attach"</v>
+                  <v n="MethodBreakPointActive">false</v>
+                  <v n="MethodReturnType">"BOOL"</v>
+                  <l n="MethodParameter" t="ArrayList" cet="UMLMethodParameter">
+                    <o>
+                      <v n="ParameterName">"observer"</v>
+                      <v n="ParameterType">"I_Observer"</v>
+                      <v n="ParameterParent">{8777bfbf-0b24-4d4c-bfbb-b615baf81400}</v>
+                      <v n="ParameterTransfer">"in"</v>
+                    </o>
+                  </l>
+                  <v n="MethodParent">{e2a73847-3ae9-41c4-a05d-e034052bdb33}</v>
+                  <v n="MethodObjectGuid">{8777bfbf-0b24-4d4c-bfbb-b615baf81400}</v>
+                  <v n="MethodStereotype">""</v>
+                  <v n="MethodParameterLength">20</v>
+                  <v n="MethodParameterTooLong">true</v>
+                </o>
+                <v>e9b4dda7-c343-4f9f-a3ca-f5b9e6583823</v>
+                <o>
+                  <v n="MethodName">"Detach"</v>
+                  <v n="MethodBreakPointActive">false</v>
+                  <v n="MethodReturnType">"BOOL"</v>
+                  <l n="MethodParameter" t="ArrayList" cet="UMLMethodParameter">
+                    <o>
+                      <v n="ParameterName">"observer"</v>
+                      <v n="ParameterType">"I_Observer"</v>
+                      <v n="ParameterParent">{e9b4dda7-c343-4f9f-a3ca-f5b9e6583823}</v>
+                      <v n="ParameterTransfer">"in"</v>
+                    </o>
+                  </l>
+                  <v n="MethodParent">{e2a73847-3ae9-41c4-a05d-e034052bdb33}</v>
+                  <v n="MethodObjectGuid">{e9b4dda7-c343-4f9f-a3ca-f5b9e6583823}</v>
+                  <v n="MethodStereotype">""</v>
+                  <v n="MethodParameterLength">20</v>
+                  <v n="MethodParameterTooLong">true</v>
+                </o>
+                <v>066cc371-6893-4a9d-a670-ce206a879997</v>
+                <o>
+                  <v n="MethodName">"Notify"</v>
+                  <v n="MethodBreakPointActive">false</v>
+                  <v n="MethodReturnType">"BOOL"</v>
+                  <l n="MethodParameter" t="ArrayList" />
+                  <v n="MethodParent">{e2a73847-3ae9-41c4-a05d-e034052bdb33}</v>
+                  <v n="MethodObjectGuid">{066cc371-6893-4a9d-a670-ce206a879997}</v>
+                  <v n="MethodStereotype">""</v>
+                  <v n="MethodParameterLength">20</v>
+                  <v n="MethodParameterTooLong">false</v>
+                </o>
+                <v>bdd75991-46b2-4d02-b68d-98ecf52da978</v>
+                <o>
+                  <v n="MethodName">"Message"</v>
+                  <v n="MethodBreakPointActive">false</v>
+                  <v n="MethodReturnType">"BOOL"</v>
+                  <l n="MethodParameter" t="ArrayList" cet="UMLMethodParameter">
+                    <o>
+                      <v n="ParameterName">"strArg"</v>
+                      <v n="ParameterType">"STRING"</v>
+                      <v n="ParameterParent">{bdd75991-46b2-4d02-b68d-98ecf52da978}</v>
+                      <v n="ParameterTransfer">"in"</v>
+                    </o>
+                  </l>
+                  <v n="MethodParent">{e2a73847-3ae9-41c4-a05d-e034052bdb33}</v>
+                  <v n="MethodObjectGuid">{bdd75991-46b2-4d02-b68d-98ecf52da978}</v>
+                  <v n="MethodStereotype">""</v>
+                  <v n="MethodParameterLength">20</v>
+                  <v n="MethodParameterTooLong">false</v>
+                </o>
+              </d>
+              <v n="MethodID">-1</v>
+              <v n="ActivityID">-1</v>
+              <v n="IecObjectSemantic">2</v>
+              <d n="MethodStereotypContainer" t="Hashtable" />
+              <o n="ElementVisualisation" t="ClassElementVisualisation">
+                <v n="ShowAttributes">true</v>
+                <v n="ShowMethods">true</v>
+                <a n="DockingPopulation" cet="Int32">AgAAAAEAAAAAAAAAAAAAAA==</a>
+                <v n="ColumnIndex">0</v>
+                <v n="RowIndex">0</v>
+                <v n="RepresentedElement">2</v>
+                <v n="IsElementVisible">true</v>
+                <v n="TopPosition">600</v>
+                <v n="LeftPosition">120</v>
+                <v n="WidthValue">402</v>
+                <v n="MinWidthValue">0</v>
+                <v n="Height">156</v>
+                <v n="MinHeight">0</v>
+                <v n="AutomaticLayout">true</v>
+                <d n="DockingPoints" t="Hashtable" />
+              </o>
+              <n n="StereotypeContainer" />
+              <v n="LibraryPath">""</v>
+              <v n="ObjectGuid">{e2a73847-3ae9-41c4-a05d-e034052bdb33}</v>
+              <v n="HasGraphicalRepresentation">true</v>
+              <v n="bIsVisualisationChanged">false</v>
+              <v n="IsType" t="UMLType">UMLClassElement</v>
+              <v n="_MaxDoCycleCalls" t="Int16">32767</v>
+              <v n="DefaultCellSizeX">70</v>
+              <v n="DefaultCellSizeY">47</v>
+              <v n="IsDocumentation">false</v>
+              <v n="Area">{354f41ce-55c6-42af-9391-fa35ab6fd442}</v>
+              <v n="ParsedMethods">false</v>
+              <v n="ParsedProperties">false</v>
+              <v n="GeneratorId">0</v>
+              <v n="UserDefined">true</v>
+              <v n="ElementID">2</v>
+              <v n="ElementObjectGuid">{e2a73847-3ae9-41c4-a05d-e034052bdb33}</v>
+              <v n="ParentGuid">{7021a349-6492-4532-9948-284bf35e6038}</v>
+              <v n="ContainerGuid">{00000000-0000-0000-0000-000000000000}</v>
+              <v n="ShowedStereotype">{df918221-ad79-45ec-a1c8-d8e1a2296252}</v>
+              <v n="ReplacewithImage">false</v>
+              <v n="AutomaticLayout">false</v>
+              <v n="PositionCounter">1L</v>
+              <v n="UMLPosition">-1L</v>
+              <v n="IsModified">false</v>
+              <v n="ARGBElementColor">0</v>
+              <v n="ZOrder">38U</v>
+            </o>
             <v>d4dce0f2-3ded-43b2-8491-9014ab19c774</v>
             <o>
               <v n="DocumenationName">"FB_EventSubscriber"</v>
@@ -335,179 +508,6 @@
               <v n="IsModified">false</v>
               <v n="ARGBElementColor">0</v>
               <v n="ZOrder">37U</v>
-            </o>
-            <v>e2a73847-3ae9-41c4-a05d-e034052bdb33</v>
-            <o>
-              <v n="DocumenationName">"Observable"</v>
-              <n n="AttributeTrigger" />
-              <v n="ExcludedFromBuild">false</v>
-              <v n="PropertiesLoaded">false</v>
-              <d n="Properties" t="Hashtable" />
-              <l n="AttributesArray" t="ArrayList" cet="UMLElementAttribute">
-                <o>
-                  <v n="bIsAttribute">true</v>
-                  <v n="isInputVar">false</v>
-                  <v n="isOutputVar">false</v>
-                  <v n="isInoutVar">false</v>
-                  <v n="isLocalVar">true</v>
-                  <v n="bIsMethod">false</v>
-                  <v n="AttribtueName">"verbose"</v>
-                  <v n="AttributeConstraint">""</v>
-                  <v n="AttributeReturnType">"BOOL"</v>
-                  <v n="AttributeParent">{e2a73847-3ae9-41c4-a05d-e034052bdb33}</v>
-                  <v n="AttributeObjectGuid">{a4f10404-ede0-4f8a-beed-ca923c46f86c}</v>
-                  <v n="AttributeStereotype">""</v>
-                </o>
-                <o>
-                  <v n="bIsAttribute">true</v>
-                  <v n="isInputVar">false</v>
-                  <v n="isOutputVar">false</v>
-                  <v n="isInoutVar">false</v>
-                  <v n="isLocalVar">true</v>
-                  <v n="bIsMethod">false</v>
-                  <v n="AttribtueName">"observers"</v>
-                  <v n="AttributeConstraint">""</v>
-                  <v n="AttributeReturnType">"ARRAY [1..param.MaxObservers] OF I_Observer"</v>
-                  <v n="AttributeParent">{e2a73847-3ae9-41c4-a05d-e034052bdb33}</v>
-                  <v n="AttributeObjectGuid">{4bdf83d1-db51-4614-9f66-df244259f08b}</v>
-                  <v n="AttributeStereotype">""</v>
-                </o>
-                <o>
-                  <v n="bIsAttribute">false</v>
-                  <v n="isInputVar">false</v>
-                  <v n="isOutputVar">false</v>
-                  <v n="isInoutVar">false</v>
-                  <v n="isLocalVar">false</v>
-                  <v n="bIsMethod">true</v>
-                  <v n="AttribtueName">"NoOfAttachedObservers"</v>
-                  <v n="AttributeConstraint">""</v>
-                  <v n="AttributeReturnType">"INT"</v>
-                  <v n="AttributeParent">{e2a73847-3ae9-41c4-a05d-e034052bdb33}</v>
-                  <v n="AttributeObjectGuid">{5bbf002f-f9f1-4de2-9982-3bdcbd5a4adc}</v>
-                  <v n="AttributeStereotype">"Property"</v>
-                </o>
-              </l>
-              <v n="PropertyID">-1</v>
-              <v n="MethodsLoaded">false</v>
-              <d n="MethodList" t="Hashtable" ckt="Guid" cvt="UMLElementMethod">
-                <v>8777bfbf-0b24-4d4c-bfbb-b615baf81400</v>
-                <o>
-                  <v n="MethodName">"Attach"</v>
-                  <v n="MethodBreakPointActive">false</v>
-                  <v n="MethodReturnType">"BOOL"</v>
-                  <l n="MethodParameter" t="ArrayList" cet="UMLMethodParameter">
-                    <o>
-                      <v n="ParameterName">"observer"</v>
-                      <v n="ParameterType">"I_Observer"</v>
-                      <v n="ParameterParent">{8777bfbf-0b24-4d4c-bfbb-b615baf81400}</v>
-                      <v n="ParameterTransfer">"in"</v>
-                    </o>
-                  </l>
-                  <v n="MethodParent">{e2a73847-3ae9-41c4-a05d-e034052bdb33}</v>
-                  <v n="MethodObjectGuid">{8777bfbf-0b24-4d4c-bfbb-b615baf81400}</v>
-                  <v n="MethodStereotype">""</v>
-                  <v n="MethodParameterLength">20</v>
-                  <v n="MethodParameterTooLong">true</v>
-                </o>
-                <v>e9b4dda7-c343-4f9f-a3ca-f5b9e6583823</v>
-                <o>
-                  <v n="MethodName">"Detach"</v>
-                  <v n="MethodBreakPointActive">false</v>
-                  <v n="MethodReturnType">"BOOL"</v>
-                  <l n="MethodParameter" t="ArrayList" cet="UMLMethodParameter">
-                    <o>
-                      <v n="ParameterName">"observer"</v>
-                      <v n="ParameterType">"I_Observer"</v>
-                      <v n="ParameterParent">{e9b4dda7-c343-4f9f-a3ca-f5b9e6583823}</v>
-                      <v n="ParameterTransfer">"in"</v>
-                    </o>
-                  </l>
-                  <v n="MethodParent">{e2a73847-3ae9-41c4-a05d-e034052bdb33}</v>
-                  <v n="MethodObjectGuid">{e9b4dda7-c343-4f9f-a3ca-f5b9e6583823}</v>
-                  <v n="MethodStereotype">""</v>
-                  <v n="MethodParameterLength">20</v>
-                  <v n="MethodParameterTooLong">true</v>
-                </o>
-                <v>066cc371-6893-4a9d-a670-ce206a879997</v>
-                <o>
-                  <v n="MethodName">"Notify"</v>
-                  <v n="MethodBreakPointActive">false</v>
-                  <v n="MethodReturnType">"BOOL"</v>
-                  <l n="MethodParameter" t="ArrayList" />
-                  <v n="MethodParent">{e2a73847-3ae9-41c4-a05d-e034052bdb33}</v>
-                  <v n="MethodObjectGuid">{066cc371-6893-4a9d-a670-ce206a879997}</v>
-                  <v n="MethodStereotype">""</v>
-                  <v n="MethodParameterLength">20</v>
-                  <v n="MethodParameterTooLong">false</v>
-                </o>
-                <v>bdd75991-46b2-4d02-b68d-98ecf52da978</v>
-                <o>
-                  <v n="MethodName">"Message"</v>
-                  <v n="MethodBreakPointActive">false</v>
-                  <v n="MethodReturnType">"BOOL"</v>
-                  <l n="MethodParameter" t="ArrayList" cet="UMLMethodParameter">
-                    <o>
-                      <v n="ParameterName">"strArg"</v>
-                      <v n="ParameterType">"STRING"</v>
-                      <v n="ParameterParent">{bdd75991-46b2-4d02-b68d-98ecf52da978}</v>
-                      <v n="ParameterTransfer">"in"</v>
-                    </o>
-                  </l>
-                  <v n="MethodParent">{e2a73847-3ae9-41c4-a05d-e034052bdb33}</v>
-                  <v n="MethodObjectGuid">{bdd75991-46b2-4d02-b68d-98ecf52da978}</v>
-                  <v n="MethodStereotype">""</v>
-                  <v n="MethodParameterLength">20</v>
-                  <v n="MethodParameterTooLong">false</v>
-                </o>
-              </d>
-              <v n="MethodID">-1</v>
-              <v n="ActivityID">-1</v>
-              <v n="IecObjectSemantic">2</v>
-              <d n="MethodStereotypContainer" t="Hashtable" />
-              <o n="ElementVisualisation" t="ClassElementVisualisation">
-                <v n="ShowAttributes">true</v>
-                <v n="ShowMethods">true</v>
-                <a n="DockingPopulation" cet="Int32">AgAAAAEAAAAAAAAAAAAAAA==</a>
-                <v n="ColumnIndex">0</v>
-                <v n="RowIndex">0</v>
-                <v n="RepresentedElement">2</v>
-                <v n="IsElementVisible">true</v>
-                <v n="TopPosition">600</v>
-                <v n="LeftPosition">120</v>
-                <v n="WidthValue">402</v>
-                <v n="MinWidthValue">0</v>
-                <v n="Height">156</v>
-                <v n="MinHeight">0</v>
-                <v n="AutomaticLayout">true</v>
-                <d n="DockingPoints" t="Hashtable" />
-              </o>
-              <n n="StereotypeContainer" />
-              <v n="LibraryPath">""</v>
-              <v n="ObjectGuid">{e2a73847-3ae9-41c4-a05d-e034052bdb33}</v>
-              <v n="HasGraphicalRepresentation">true</v>
-              <v n="bIsVisualisationChanged">false</v>
-              <v n="IsType" t="UMLType">UMLClassElement</v>
-              <v n="_MaxDoCycleCalls" t="Int16">32767</v>
-              <v n="DefaultCellSizeX">70</v>
-              <v n="DefaultCellSizeY">47</v>
-              <v n="IsDocumentation">false</v>
-              <v n="Area">{354f41ce-55c6-42af-9391-fa35ab6fd442}</v>
-              <v n="ParsedMethods">false</v>
-              <v n="ParsedProperties">false</v>
-              <v n="GeneratorId">0</v>
-              <v n="UserDefined">true</v>
-              <v n="ElementID">2</v>
-              <v n="ElementObjectGuid">{e2a73847-3ae9-41c4-a05d-e034052bdb33}</v>
-              <v n="ParentGuid">{7021a349-6492-4532-9948-284bf35e6038}</v>
-              <v n="ContainerGuid">{00000000-0000-0000-0000-000000000000}</v>
-              <v n="ShowedStereotype">{df918221-ad79-45ec-a1c8-d8e1a2296252}</v>
-              <v n="ReplacewithImage">false</v>
-              <v n="AutomaticLayout">false</v>
-              <v n="PositionCounter">1L</v>
-              <v n="UMLPosition">-1L</v>
-              <v n="IsModified">false</v>
-              <v n="ARGBElementColor">0</v>
-              <v n="ZOrder">38U</v>
             </o>
             <v>1f5de49e-15f1-4016-8ec5-881bbd6dbdff</v>
             <o>

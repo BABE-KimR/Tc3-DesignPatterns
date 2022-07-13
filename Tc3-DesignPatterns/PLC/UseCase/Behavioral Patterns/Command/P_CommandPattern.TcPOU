@@ -40,6 +40,11 @@ END_VAR
 	init := FALSE;
 END_IF
 
+// The lights have no cyclic call since they just flip the output
+
+// The gate needs to be processed as long as it is not fully opened or closed after a command
+frontGate.CyclicCall();
+
 // Process the tp10's, could be an array of instances that is cyclically called
 tp10MainHallway.CyclicCall();]]></ST>
     </Implementation>
