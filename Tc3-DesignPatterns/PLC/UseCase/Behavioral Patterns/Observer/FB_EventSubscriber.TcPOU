@@ -2,7 +2,7 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
   <POU Name="FB_EventSubscriber" Id="{d4dce0f2-3ded-43b2-8491-9014ab19c774}" SpecialFunc="None">
     <Declaration><![CDATA[{attribute 'no_explicit_call' := 'FB_EventSubscriber is a CLASS and must be accessed using methods or properties'}
-FUNCTION_BLOCK FB_EventSubscriber IMPLEMENTS I_Observer
+FUNCTION_BLOCK FB_EventSubscriber IMPLEMENTS I_CyclicCall, I_Observer
 VAR	
 	_eventPublisher					: I_EventPublisher;
 	_event							: INT;
@@ -11,6 +11,9 @@ VAR
 
 	// Register after online change 
 	registeredAtPublisher			: BOOL;	
+	
+	
+	arr				: ARRAY[0..100] OF BOOL;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[

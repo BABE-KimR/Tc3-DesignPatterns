@@ -203,7 +203,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"BOOL"</v>
                   <v n="AttributeParent">{e2a73847-3ae9-41c4-a05d-e034052bdb33}</v>
-                  <v n="AttributeObjectGuid">{8a1c7014-ee87-48f2-83d7-e7b69a985b40}</v>
+                  <v n="AttributeObjectGuid">{621c46fc-fc0a-447b-996c-a64a21513173}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -217,7 +217,7 @@
                   <v n="AttributeConstraint">""</v>
                   <v n="AttributeReturnType">"ARRAY [1..param.MaxObservers] OF I_Observer"</v>
                   <v n="AttributeParent">{e2a73847-3ae9-41c4-a05d-e034052bdb33}</v>
-                  <v n="AttributeObjectGuid">{32249578-9d5d-4a55-9222-24849dfc0d32}</v>
+                  <v n="AttributeObjectGuid">{627636f1-d8fb-47e2-92ba-4ec52b0373ad}</v>
                   <v n="AttributeStereotype">""</v>
                 </o>
                 <o>
@@ -238,17 +238,24 @@
               <v n="PropertyID">-1</v>
               <v n="MethodsLoaded">false</v>
               <d n="MethodList" t="Hashtable" ckt="Guid" cvt="UMLElementMethod">
-                <v>066cc371-6893-4a9d-a670-ce206a879997</v>
+                <v>8777bfbf-0b24-4d4c-bfbb-b615baf81400</v>
                 <o>
-                  <v n="MethodName">"Notify"</v>
+                  <v n="MethodName">"Attach"</v>
                   <v n="MethodBreakPointActive">false</v>
                   <v n="MethodReturnType">"BOOL"</v>
-                  <l n="MethodParameter" t="ArrayList" />
+                  <l n="MethodParameter" t="ArrayList" cet="UMLMethodParameter">
+                    <o>
+                      <v n="ParameterName">"observer"</v>
+                      <v n="ParameterType">"I_Observer"</v>
+                      <v n="ParameterParent">{8777bfbf-0b24-4d4c-bfbb-b615baf81400}</v>
+                      <v n="ParameterTransfer">"in"</v>
+                    </o>
+                  </l>
                   <v n="MethodParent">{e2a73847-3ae9-41c4-a05d-e034052bdb33}</v>
-                  <v n="MethodObjectGuid">{066cc371-6893-4a9d-a670-ce206a879997}</v>
+                  <v n="MethodObjectGuid">{8777bfbf-0b24-4d4c-bfbb-b615baf81400}</v>
                   <v n="MethodStereotype">""</v>
                   <v n="MethodParameterLength">20</v>
-                  <v n="MethodParameterTooLong">false</v>
+                  <v n="MethodParameterTooLong">true</v>
                 </o>
                 <v>e9b4dda7-c343-4f9f-a3ca-f5b9e6583823</v>
                 <o>
@@ -269,6 +276,18 @@
                   <v n="MethodParameterLength">20</v>
                   <v n="MethodParameterTooLong">true</v>
                 </o>
+                <v>066cc371-6893-4a9d-a670-ce206a879997</v>
+                <o>
+                  <v n="MethodName">"Notify"</v>
+                  <v n="MethodBreakPointActive">false</v>
+                  <v n="MethodReturnType">"BOOL"</v>
+                  <l n="MethodParameter" t="ArrayList" />
+                  <v n="MethodParent">{e2a73847-3ae9-41c4-a05d-e034052bdb33}</v>
+                  <v n="MethodObjectGuid">{066cc371-6893-4a9d-a670-ce206a879997}</v>
+                  <v n="MethodStereotype">""</v>
+                  <v n="MethodParameterLength">20</v>
+                  <v n="MethodParameterTooLong">false</v>
+                </o>
                 <v>bdd75991-46b2-4d02-b68d-98ecf52da978</v>
                 <o>
                   <v n="MethodName">"Message"</v>
@@ -287,25 +306,6 @@
                   <v n="MethodStereotype">""</v>
                   <v n="MethodParameterLength">20</v>
                   <v n="MethodParameterTooLong">false</v>
-                </o>
-                <v>8777bfbf-0b24-4d4c-bfbb-b615baf81400</v>
-                <o>
-                  <v n="MethodName">"Attach"</v>
-                  <v n="MethodBreakPointActive">false</v>
-                  <v n="MethodReturnType">"BOOL"</v>
-                  <l n="MethodParameter" t="ArrayList" cet="UMLMethodParameter">
-                    <o>
-                      <v n="ParameterName">"observer"</v>
-                      <v n="ParameterType">"I_Observer"</v>
-                      <v n="ParameterParent">{8777bfbf-0b24-4d4c-bfbb-b615baf81400}</v>
-                      <v n="ParameterTransfer">"in"</v>
-                    </o>
-                  </l>
-                  <v n="MethodParent">{e2a73847-3ae9-41c4-a05d-e034052bdb33}</v>
-                  <v n="MethodObjectGuid">{8777bfbf-0b24-4d4c-bfbb-b615baf81400}</v>
-                  <v n="MethodStereotype">""</v>
-                  <v n="MethodParameterLength">20</v>
-                  <v n="MethodParameterTooLong">true</v>
                 </o>
               </d>
               <v n="MethodID">-1</v>

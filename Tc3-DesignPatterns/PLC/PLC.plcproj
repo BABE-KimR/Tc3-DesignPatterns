@@ -16,6 +16,12 @@
     </CompilerDefines>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Behavioral Patterns\Command\I_Command.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Behavioral Patterns\Command\NoCommand.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Behavioral Patterns\Observer\Class Diagram Observer.TcCD">
       <SubType>Code</SubType>
     </Compile>
@@ -26,6 +32,45 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Behavioral Patterns\Observer\I_Observer.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UseCase\Behavioral Patterns\Command\Clients %28Receivers%29\Gate.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UseCase\Behavioral Patterns\Command\Clients %28Receivers%29\Light.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UseCase\Behavioral Patterns\Command\Commands\I_OffCommand.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UseCase\Behavioral Patterns\Command\Commands\I_CloseCommand.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UseCase\Behavioral Patterns\Command\Commands\I_OnCommand.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UseCase\Behavioral Patterns\Command\Commands\I_OpenCommand.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UseCase\Behavioral Patterns\Command\Commands\OffCommand.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UseCase\Behavioral Patterns\Command\Commands\CloseCommand.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UseCase\Behavioral Patterns\Command\Commands\OnCommand.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UseCase\Behavioral Patterns\Command\Commands\OpenCommand.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UseCase\Behavioral Patterns\Command\Invokers\Tp10.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UseCase\Behavioral Patterns\Command\P_CommandPattern.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="_Interfaces\I_CyclicCall.TcIO">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="MAIN.TcPOU">
@@ -59,7 +104,7 @@
     <Compile Include="UseCase\Behavioral Patterns\Observer\I_EventPublisher.TcIO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="UseCase\Behavioral Patterns\Observer\P_Observer_Pattern.TcPOU">
+    <Compile Include="UseCase\Behavioral Patterns\Observer\P_ObserverPattern.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="UseCase\Behavioral Patterns\Observer\_Class Diagram Observer Use Case.TcCD">
@@ -71,9 +116,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Behavioral Patterns" />
+    <Folder Include="Behavioral Patterns\Command" />
+    <Folder Include="Behavioral Patterns\Singleton" />
     <Folder Include="Behavioral Patterns\Observer" />
+    <Folder Include="UseCase\Behavioral Patterns\Command\Commands" />
+    <Folder Include="UseCase\Behavioral Patterns\Command\Invokers" />
+    <Folder Include="UseCase\Behavioral Patterns\Command\Clients %28Receivers%29" />
+    <Folder Include="_Interfaces" />
     <Folder Include="UseCase" />
     <Folder Include="UseCase\Behavioral Patterns" />
+    <Folder Include="UseCase\Behavioral Patterns\Command" />
+    <Folder Include="UseCase\Behavioral Patterns\Singleton" />
     <Folder Include="UseCase\Behavioral Patterns\Observer" />
     <Folder Include="Test" />
     <Folder Include="Test\Behavioral Patterns" />

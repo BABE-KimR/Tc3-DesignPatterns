@@ -2,7 +2,7 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
   <POU Name="EventPublisherWithoutInheritance" Id="{4c0b0b24-9663-4c35-9fa9-604c8ef8258b}" SpecialFunc="None">
     <Declaration><![CDATA[{attribute 'no_explicit_call' := 'FB_EventPublisher is a CLASS and must be accessed using methods or properties'}
-FUNCTION_BLOCK EventPublisherWithoutInheritance IMPLEMENTS I_EventPublisher
+FUNCTION_BLOCK EventPublisherWithoutInheritance IMPLEMENTS I_CyclicCall, I_EventPublisher
 VAR
 	_event							: INT;
 	eventPrev						: INT;

@@ -6,6 +6,7 @@ VAR
 	// Unit test use the implementation of the use case so both 
 	// base blocks and use case blocks are tested at once
 	eventPublisher					: EventPublisherWithInheritance;
+	//eventSubscriber					: ARRAY[1..param.MaxObservers+1] OF FB_EventSubscriber[(eventPublisher),(eventPublisher),(0),(0),(0),(0)];	// Max + 1 for unit test	// Pass the interface reference to the instances is not possible?	
 	eventSubscriber					: ARRAY[1..param.MaxObservers+1] OF FB_EventSubscriber(0);	// Max + 1 for unit test	// Pass the interface reference to the instances is not possible?	
 END_VAR
 ]]></Declaration>

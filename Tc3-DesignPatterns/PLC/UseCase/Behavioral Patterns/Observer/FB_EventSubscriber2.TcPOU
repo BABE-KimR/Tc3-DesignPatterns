@@ -2,7 +2,7 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
   <POU Name="FB_EventSubscriber2" Id="{78948430-835f-4189-b81a-4f54b3428e0d}" SpecialFunc="None">
     <Declaration><![CDATA[{attribute 'no_explicit_call' := 'FB_EventSubscriber2 is a CLASS and must be accessed using methods or properties'}
-FUNCTION_BLOCK FB_EventSubscriber2 IMPLEMENTS I_Observer
+FUNCTION_BLOCK FB_EventSubscriber2 IMPLEMENTS I_CyclicCall, I_Observer
 VAR	
 	_eventPublisher					: I_EventPublisher;
 	_event							: INT;
@@ -13,10 +13,7 @@ VAR
 	registeredAtPublisher			: BOOL;
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[
-// The body of a class must not be used for code.  
-// Cyclic code should be called from a method if needed. 
-]]></ST>
+      <ST><![CDATA[]]></ST>
     </Implementation>
     <Method Name="ChangePublisher" Id="{b82c57d4-07cb-44c7-864e-1e74061ee3c0}">
       <Declaration><![CDATA[METHOD ChangePublisher

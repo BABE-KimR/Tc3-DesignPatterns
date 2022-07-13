@@ -7,7 +7,8 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[// Behavioral patterns
-P_Observer_Pattern();
+P_ObserverPattern();
+P_CommandPattern();
 
 ]]></ST>
     </Implementation>
