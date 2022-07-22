@@ -34,6 +34,18 @@
     <Compile Include="Behavioral Patterns\Observer\I_Observer.TcIO">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Behavioral Patterns\Singleton\I_Singleton.TcIO">
+      <SubType>Code</SubType>
+      <ExcludeFromBuild>false</ExcludeFromBuild>
+    </Compile>
+    <Compile Include="Behavioral Patterns\Singleton\Singleton.TcPOU">
+      <SubType>Code</SubType>
+      <ExcludeFromBuild>false</ExcludeFromBuild>
+      <External>false</External>
+    </Compile>
+    <Compile Include="Behavioral Patterns\Singleton\MySingleton.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="UseCase\Behavioral Patterns\Command\Clients %28Receivers%29\Gate.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -68,6 +80,37 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="UseCase\Behavioral Patterns\Command\P_CommandPattern.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UseCase\Behavioral Patterns\Decorator\P_Decorator.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UseCase\Behavioral Patterns\Decorator\StringBuilder\StringBuilder.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UseCase\Behavioral Patterns\Singleton\P_Singleton.TcPOU">
+      <SubType>Code</SubType>
+      <ExcludeFromBuild>false</ExcludeFromBuild>
+    </Compile>
+    <Compile Include="UseCase\Behavioral Patterns\Singleton\SingletonByProxy1\P_SingletonByProxy.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UseCase\Behavioral Patterns\Singleton\SingletonByProxy1\ProxyToSingleton.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UseCase\Behavioral Patterns\Singleton\SingletonByProxy1\Proxy_Interface.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UseCase\Behavioral Patterns\Singleton\SingletonByProxy1\RealSingleton.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UseCase\Behavioral Patterns\Singleton\SingletonByProxy\I_MessageLogger.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UseCase\Behavioral Patterns\Singleton\SingletonByProxy\MessageLogger.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UseCase\Behavioral Patterns\Singleton\SingletonByProxy\MessageLoggerSingleton.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="_Interfaces\I_CyclicCall.TcIO">
@@ -122,6 +165,13 @@
     <Folder Include="UseCase\Behavioral Patterns\Command\Commands" />
     <Folder Include="UseCase\Behavioral Patterns\Command\Invokers" />
     <Folder Include="UseCase\Behavioral Patterns\Command\Clients %28Receivers%29" />
+    <Folder Include="UseCase\Behavioral Patterns\Decorator" />
+    <Folder Include="UseCase\Behavioral Patterns\Decorator\LinkedList" />
+    <Folder Include="UseCase\Behavioral Patterns\Decorator\StringBuilder" />
+    <Folder Include="UseCase\Behavioral Patterns\Singleton\SingletonByProxy" />
+    <Folder Include="UseCase\Behavioral Patterns\Singleton\SingletonByProxy1">
+      <ExcludeFromBuild>true</ExcludeFromBuild>
+    </Folder>
     <Folder Include="_Interfaces" />
     <Folder Include="UseCase" />
     <Folder Include="UseCase\Behavioral Patterns" />
@@ -163,7 +213,19 @@
     <Content Include="Behavioral Patterns\Observer\GOF Design Patterns - Behavioral - Observer.png">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="UseCase\Behavioral Patterns\Command\_Readme_Command.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UseCase\Behavioral Patterns\Decorator\StringBuilder\_Readme_Decorator.txt">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="UseCase\Behavioral Patterns\Observer\_Readme_Observer.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UseCase\Behavioral Patterns\Singleton\SingletonByProxy1\_Readme_Singleton.txt">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UseCase\Behavioral Patterns\Singleton\_Readme_Singleton.txt">
       <SubType>Content</SubType>
     </Content>
   </ItemGroup>
@@ -173,6 +235,9 @@
       <ExcludeFromBuild>true</ExcludeFromBuild>
     </SubObject>
     <SubObject Include="FB_EventSubscriber2.fbreinit">
+      <ExcludeFromBuild>true</ExcludeFromBuild>
+    </SubObject>
+    <SubObject Include="MySingleton.FB_reinit">
       <ExcludeFromBuild>true</ExcludeFromBuild>
     </SubObject>
     <SubObject Include="Observable.fbreinit">

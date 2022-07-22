@@ -8,8 +8,12 @@ END_VAR
     <Implementation>
       <ST><![CDATA[// Behavioral patterns
 P_ObserverPattern();
+P_Decorator();
 P_CommandPattern();
+P_Singleton();
+//P_SingletonByProxy();
 
+ 
 ]]></ST>
     </Implementation>
   </POU>

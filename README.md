@@ -7,6 +7,9 @@ https://en.wikipedia.org/wiki/Design_Patterns
    * None yet
  * Behavioral patterns
    * Observer
+   * Command
+   * Singleton (by proxy)
+   * Decorator 
    
 
 ## Additional patterns 
