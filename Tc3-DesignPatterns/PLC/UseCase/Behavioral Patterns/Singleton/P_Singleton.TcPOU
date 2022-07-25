@@ -13,14 +13,19 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[messageLogger.LogMessage(myMessage1);
+      <ST><![CDATA[// Log 'message 1' to the first messagelogger instance
+messageLogger.LogMessage(myMessage1);
 myMessage := messageLogger.message;
 
+// Log 'message 2' to a second messagelogger instance
 messageLogger1.LogMessage(myMessage2);
 myMessage := messageLogger.message;
+myMessage := messageLogger1.message;
 
+// Log 'message 3' to a third messagelogger instance
 messageLogger2.LogMessage(myMessage3);
 myMessage := messageLogger.message;
+myMessage := messageLogger2.message;
 
 ]]></ST>
     </Implementation>

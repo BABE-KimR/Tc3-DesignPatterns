@@ -46,6 +46,9 @@
     <Compile Include="Behavioral Patterns\Singleton\MySingleton.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Test\Behavioral Patterns\Singleton\SingletonPatternTest.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="UseCase\Behavioral Patterns\Command\Clients %28Receivers%29\Gate.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -162,6 +165,7 @@
     <Folder Include="Behavioral Patterns\Command" />
     <Folder Include="Behavioral Patterns\Singleton" />
     <Folder Include="Behavioral Patterns\Observer" />
+    <Folder Include="Test\Behavioral Patterns\Singleton" />
     <Folder Include="UseCase\Behavioral Patterns\Command\Commands" />
     <Folder Include="UseCase\Behavioral Patterns\Command\Invokers" />
     <Folder Include="UseCase\Behavioral Patterns\Command\Clients %28Receivers%29" />

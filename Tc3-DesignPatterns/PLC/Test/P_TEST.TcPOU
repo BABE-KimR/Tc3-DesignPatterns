@@ -4,6 +4,7 @@
     <Declaration><![CDATA[PROGRAM P_TEST
 VAR
 	fbObserver_Pattern_Test					: ObserverPatternTest;
+	fbSingleton_Pattern_Test				: SingletonPatternTest;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[tcUnit.RUN();
